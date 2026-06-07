@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A modern calculator web application with light/dark mode support">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-wrapper">
+
+    <div class="calculator" role="application" aria-label="Calculator">
+      <header class="calculator-header">
+        <h1 class="calculator-title">Calculator</h1>
+
+        
+        <button
+          class="theme-toggle"
+          id="themeToggle"
+          type="button"
+          aria-label="Toggle light/dark mode"
+          title="Toggle theme"
+        >
+          
+          <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          
+          <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+      </header>
+
+      
+      <section class="display" aria-live="polite" aria-atomic="true">
+        <p class="display-expression" id="expression" aria-label="Current expression"></p>
+        <p class="display-result" id="result" aria-label="Result">0</p>
+      </section>
+
+      
+      <section class="buttons" role="group" aria-label="Calculator buttons">
+        <button class="btn btn-function" data-action="clear" type="button">C</button>
+        <button class="btn btn-function" data-action="delete" type="button">DEL</button>
+        <button class="btn btn-operator" data-action="percent" type="button">%</button>
+        <button class="btn btn-operator" data-action="operator" data-value="/" type="button">÷</button>
+
+        <button class="btn btn-number" data-action="number" data-value="7" type="button">7</button>
+        <button class="btn btn-number" data-action="number" data-value="8" type="button">8</button>
+        <button class="btn btn-number" data-action="number" data-value="9" type="button">9</button>
+        <button class="btn btn-operator" data-action="operator" data-value="*" type="button">×</button>
+
+        <button class="btn btn-number" data-action="number" data-value="4" type="button">4</button>
+        <button class="btn btn-number" data-action="number" data-value="5" type="button">5</button>
+        <button class="btn btn-number" data-action="number" data-value="6" type="button">6</button>
+        <button class="btn btn-operator" data-action="operator" data-value="-" type="button">−</button>
+
+        <button class="btn btn-number" data-action="number" data-value="1" type="button">1</button>
+        <button class="btn btn-number" data-action="number" data-value="2" type="button">2</button>
+        <button class="btn btn-number" data-action="number" data-value="3" type="button">3</button>
+        <button class="btn btn-operator" data-action="operator" data-value="+" type="button">+</button>
+
+        <button class="btn btn-number btn-zero" data-action="number" data-value="0" type="button">0</button>
+        <button class="btn btn-number" data-action="decimal" type="button">.</button>
+        <button class="btn btn-equals" data-action="equals" type="button">=</button>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
