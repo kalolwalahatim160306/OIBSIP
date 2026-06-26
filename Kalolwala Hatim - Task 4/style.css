@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f6f4eb; /* Cream background */
+    color: #2d3748; /* Dark charcoal text for readability */
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.card {
+    background-color: #f8f9fa; /* Shadow white card background instead of pure white */
+    width: 100%;
+    max-width: 420px;
+    padding: 40px 30px;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    display: none; /* Views are hidden by default, toggled via JS */
+    border: 1px solid #d3cfbf;
+}
+
+.card.active {
+    display: block; /* Show the active view card */
+}
+
+.card h2 {
+    margin-bottom: 8px;
+    font-size: 28px;
+    font-weight: 600;
+    color: #1a202c;
+}
+
+.card-subtitle {
+    font-size: 14px;
+    color: #718096;
+    margin-bottom: 24px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #4a5568;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 2px solid #cbd5e0;
+    background-color: #f6f4eb; /* Input field background matches page background */
+    color: #2d3748;
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #97da44; /* Bright green focus accent */
+    box-shadow: 0 0 8px rgba(151, 218, 68, 0.3);
+}
+
+.btn {
+    width: 100%;
+    padding: 14px;
+    border-radius: 8px;
+    border: none;
+    background-color: #97da44; /* Primary Button (Vibrant Green) */
+    color: #1a202c; /* Dark text for contrast on light green background */
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background-color: #83c337;
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.footer-text {
+    margin-top: 24px;
+    font-size: 14px;
+    color: #718096;
+}
+
+.footer-text a {
+    color: #83c337; /* Accent link color */
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.footer-text a:hover {
+    color: #6da22e;
+    text-decoration: underline;
+}
+
+/* Alert notifications */
+.alert-container {
+    margin-bottom: 20px;
+    display: none;
+    position: fixed;
+    top: 20px;
+    width: calc(100% - 40px);
+    max-width: 420px;
+    z-index: 1000;
+}
+
+.alert {
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    text-align: left;
+    margin-bottom: 10px;
+    border-left: 4px solid transparent;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.alert-success {
+    background-color: #e6fffa;
+    color: #0d9488;
+    border-left-color: #0d9488;
+}
+
+.alert-danger {
+    background-color: #fff5f5;
+    color: #e53e3e;
+    border-left-color: #e53e3e;
+}
+
+/* Dashboard styles */
+.dashboard-card {
+    max-width: 500px;
+}
+
+.dashboard-card h1 {
+    font-size: 32px;
+    margin-bottom: 16px;
+    color: #1a202c;
+}
+
+.dashboard-card p {
+    font-size: 16px;
+    color: #4a5568;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.btn-logout {
+    background-color: #e53e3e;
+    color: #f8f9fa;
+}
+
+.btn-logout:hover {
+    background-color: #c53030;
+}
