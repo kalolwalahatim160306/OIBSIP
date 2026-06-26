@@ -1,0 +1,146 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Whole page - black background, serif text */
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Top header section */
+header {
+  text-align: center;
+  padding: 60px 20px 50px;
+}
+
+header h1 {
+  font-size: 48px;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+.dates {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.tagline {
+  font-size: 16px;
+  color: #cccccc;
+}
+
+/* White banner - quote on left, image on right */
+.banner {
+  background-color: #ffffff;
+  color: #333333;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 50px 40px;
+}
+
+.banner blockquote {
+  max-width: 400px;
+}
+
+.banner blockquote p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #444444;
+}
+
+.banner figure {
+  text-align: center;
+}
+
+.banner img {
+  width: 280px;
+  height: auto;
+  display: block;
+  filter: grayscale(100%);
+}
+
+.banner figcaption {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #666666;
+  margin-top: 8px;
+}
+
+/* Main content sections on black background */
+main section {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px 25px;
+  border-top: 1px solid #333333;
+}
+
+main h2 {
+  font-size: 32px;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+main p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #dddddd;
+}
+
+/* Timeline list */
+.timeline {
+  list-style: none;
+  color: #dddddd;
+}
+
+.timeline li {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 30px 20px 50px;
+  border-top: 1px solid #333333;
+}
+
+footer a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #4a9eff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 36px;
+  }
+
+  .banner {
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+
+  .banner blockquote {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  main h2 {
+    font-size: 26px;
+  }
+}
