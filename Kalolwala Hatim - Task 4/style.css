@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Montserrat:wght@400;600;700&display=swap');
 
 * {
     margin: 0;
@@ -7,116 +7,160 @@
 }
 
 body {
-    background-color: #f6f4eb; /* Cream background */
-    color: #2d3748; /* Dark charcoal text for readability */
-    font-family: 'Outfit', sans-serif;
+    /* Spider-Verse Neon City background from local file */
+    background: url('world.jpg') no-repeat center center/cover;
+    background-color: #0f1626;
+    font-family: 'Montserrat', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     padding: 20px;
+    position: relative;
+}
+
+/* Optional overlay for better text readability */
+body::before {
+    content: '';
+    position: absolute;
+    top:0; left:0; width:100%; height:100%;
+    background: radial-gradient(circle, transparent 10%, rgba(0,0,0,0.7) 100%);
+    z-index: -1;
 }
 
 .card {
-    background-color: #f8f9fa; /* Shadow white card background instead of pure white */
+    background: rgba(10, 10, 15, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 3px solid #E23636; /* Spidey Red */
+    border-radius: 8px; /* Sharper edges for comic feel */
     width: 100%;
-    max-width: 420px;
-    padding: 40px 30px;
-    border-radius: 16px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    max-width: 400px;
+    padding: 40px 40px;
+    box-shadow: 8px 8px 0px #0F52BA; /* Spidey Blue comic shadow */
     text-align: center;
-    display: none; /* Views are hidden by default, toggled via JS */
-    border: 1px solid #d3cfbf;
+    display: none; 
 }
 
 .card.active {
-    display: block; /* Show the active view card */
+    display: block; 
 }
 
 .card h2 {
-    margin-bottom: 8px;
-    font-size: 28px;
-    font-weight: 600;
-    color: #1a202c;
-}
-
-.card-subtitle {
-    font-size: 14px;
-    color: #718096;
-    margin-bottom: 24px;
+    margin-bottom: 30px;
+    font-family: 'Bangers', cursive;
+    font-size: 40px;
+    letter-spacing: 2px;
+    color: #E23636;
+    text-shadow: 2px 2px 0px #fff;
+    text-transform: uppercase;
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    position: relative;
     text-align: left;
 }
 
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 14px;
-    font-weight: 500;
-    color: #4a5568;
-}
-
-.form-group input {
+.form-group input[type="text"],
+.form-group input[type="password"] {
     width: 100%;
-    padding: 12px 16px;
-    border-radius: 8px;
-    border: 2px solid #cbd5e0;
-    background-color: #f6f4eb; /* Input field background matches page background */
-    color: #2d3748;
+    padding: 10px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(255,255,255,0.5);
+    color: #fff;
     font-family: inherit;
     font-size: 15px;
+    font-weight: 600;
     outline: none;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input[type="text"]::placeholder,
+.form-group input[type="password"]::placeholder {
+    color: rgba(255,255,255,0.4);
+    font-weight: 400;
 }
 
 .form-group input:focus {
-    border-color: #97da44; /* Bright green focus accent */
-    box-shadow: 0 0 8px rgba(151, 218, 68, 0.3);
+    border-bottom: 2px solid #E23636;
+}
+
+.forgot-pwd {
+    position: absolute;
+    right: 0;
+    bottom: -20px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #0F52BA; /* Blue link */
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.forgot-pwd:hover {
+    text-decoration: underline;
+    color: #fff;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.checkbox-group input {
+    margin-right: 8px;
+    accent-color: #E23636;
 }
 
 .btn {
     width: 100%;
     padding: 14px;
-    border-radius: 8px;
-    border: none;
-    background-color: #97da44; /* Primary Button (Vibrant Green) */
-    color: #1a202c; /* Dark text for contrast on light green background */
-    font-size: 16px;
-    font-weight: 600;
+    border-radius: 4px;
+    border: 2px solid #000;
+    background: #E23636;
+    color: #fff;
+    font-family: 'Bangers', cursive;
+    font-size: 22px;
+    letter-spacing: 1px;
     cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.2s ease;
-    margin-top: 10px;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 
 .btn:hover {
-    background-color: #83c337;
-    transform: translateY(-2px);
+    background: #c22929;
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0px #0F52BA;
 }
 
 .btn:active {
-    transform: translateY(0);
+    transform: translate(0, 0);
+    box-shadow: 0px 0px 0px #0F52BA;
 }
 
 .footer-text {
-    margin-top: 24px;
+    margin-top: 25px;
     font-size: 14px;
-    color: #718096;
+    font-weight: 600;
+    color: rgba(255,255,255,0.8);
 }
 
 .footer-text a {
-    color: #83c337; /* Accent link color */
+    color: #E23636;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
-    transition: color 0.3s ease;
+    text-shadow: 1px 1px 0px #000;
 }
 
 .footer-text a:hover {
-    color: #6da22e;
     text-decoration: underline;
+    color: #fff;
 }
 
 /* Alert notifications */
@@ -132,49 +176,79 @@ body {
 
 .alert {
     padding: 12px 16px;
-    border-radius: 8px;
-    font-size: 14px;
+    border-radius: 4px;
+    font-family: 'Bangers', cursive;
+    font-size: 18px;
+    letter-spacing: 1px;
     text-align: left;
     margin-bottom: 10px;
-    border-left: 4px solid transparent;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 2px solid #000;
+    box-shadow: 4px 4px 0px #000;
+    background: #fff;
+    color: #000;
 }
 
 .alert-success {
-    background-color: #e6fffa;
-    color: #0d9488;
-    border-left-color: #0d9488;
+    background: #0F52BA;
+    color: #fff;
 }
 
 .alert-danger {
-    background-color: #fff5f5;
-    color: #e53e3e;
-    border-left-color: #e53e3e;
+    background: #E23636;
+    color: #fff;
 }
 
 /* Dashboard styles */
-.dashboard-card {
-    max-width: 500px;
+.dashboard-fullscreen {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
-.dashboard-card h1 {
-    font-size: 32px;
-    margin-bottom: 16px;
-    color: #1a202c;
+.dashboard-fullscreen.active {
+    display: flex;
 }
 
-.dashboard-card p {
-    font-size: 16px;
-    color: #4a5568;
-    margin-bottom: 30px;
-    line-height: 1.5;
+.dashboard-content {
+    max-width: 700px;
+    padding: 40px;
+}
+
+.dashboard-content h1 {
+    font-family: 'Bangers', cursive;
+    font-size: 70px;
+    letter-spacing: 4px;
+    color: #E23636;
+    text-shadow: 4px 4px 0px #0F52BA, 6px 6px 0px #fff;
+    margin-bottom: 20px;
+    transform: rotate(-3deg); /* Comic book tilt */
 }
 
 .btn-logout {
-    background-color: #e53e3e;
-    color: #f8f9fa;
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    width: auto;
+    padding: 10px 24px;
+    background: #000;
+    color: #fff;
+    border: 2px solid #E23636;
+    box-shadow: 4px 4px 0px #E23636;
+    font-family: 'Bangers', cursive;
+    font-size: 20px;
+    letter-spacing: 1px;
 }
 
 .btn-logout:hover {
-    background-color: #c53030;
+    background: #222;
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px #E23636;
 }
+
+

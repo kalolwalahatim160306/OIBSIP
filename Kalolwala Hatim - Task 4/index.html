@@ -16,62 +16,61 @@
 
     <!-- 1. LOGIN CARD VIEW -->
     <div id="login-view" class="card active">
-        <h2>Welcome Back</h2>
-        <div class="card-subtitle">Please enter your credentials to login</div>
+        <h2>LOGIN</h2>
 
         <form id="login-form">
             <div class="form-group">
-                <label for="login-username">Username</label>
-                <input type="text" id="login-username" required placeholder="Enter your username" autocomplete="username">
+                <input type="text" id="login-username" required placeholder="Username" autocomplete="username">
             </div>
             
             <div class="form-group">
-                <label for="login-password">Password</label>
-                <input type="password" id="login-password" required placeholder="Enter your password" autocomplete="current-password">
+                <input type="password" id="login-password" required placeholder="Password" autocomplete="current-password">
+                <a href="#" class="forgot-pwd">Forgot Password?</a>
             </div>
 
-            <button type="submit" class="btn">Log In</button>
+            <div class="form-group checkbox-group">
+                <input type="checkbox" id="remember-me">
+                <label for="remember-me">Remember Me</label>
+            </div>
+
+            <button type="submit" class="btn">Login</button>
         </form>
 
         <div class="footer-text">
-            Don't have an account? <a onclick="navigateTo('register')">Register here</a>
+            Don't have an Account? <a onclick="navigateTo('register')">Register</a>
         </div>
     </div>
 
     <!-- 2. REGISTER CARD VIEW -->
     <div id="register-view" class="card">
-        <h2>Create Account</h2>
-        <div class="card-subtitle">Sign up to get access to the dashboard</div>
+        <h2>REGISTER</h2>
 
         <form id="register-form">
             <div class="form-group">
-                <label for="register-username">Username</label>
-                <input type="text" id="register-username" required placeholder="Choose a username" autocomplete="username">
+                <input type="text" id="register-username" required placeholder="Username" autocomplete="username">
             </div>
             
             <div class="form-group">
-                <label for="register-password">Password</label>
-                <input type="password" id="register-password" required placeholder="Create a password" autocomplete="new-password">
+                <input type="password" id="register-password" required placeholder="Password" autocomplete="new-password">
             </div>
 
             <div class="form-group">
-                <label for="register-confirm-password">Confirm Password</label>
-                <input type="password" id="register-confirm-password" required placeholder="Re-enter your password" autocomplete="new-password">
+                <input type="password" id="register-confirm-password" required placeholder="Confirm Password" autocomplete="new-password">
             </div>
 
             <button type="submit" class="btn">Register</button>
         </form>
 
         <div class="footer-text">
-            Already have an account? <a onclick="navigateTo('login')">Login here</a>
+            Already have an Account? <a onclick="navigateTo('login')">Login here</a>
         </div>
     </div>
 
     <!-- 3. PROTECTED DASHBOARD CARD VIEW -->
-    <div id="dashboard-view" class="card dashboard-card">
-        <h1 id="welcome-message">Welcome, [username]</h1>
-        <p>This is a protected page. You are seeing this because you have successfully authenticated and your session is active.</p>
-        
+    <div id="dashboard-view" class="dashboard-fullscreen">
+        <div class="dashboard-content">
+            <h1 id="welcome-message">Welcome, [username]</h1>
+        </div>
         <button id="logout-btn" class="btn btn-logout">Logout</button>
     </div>
 

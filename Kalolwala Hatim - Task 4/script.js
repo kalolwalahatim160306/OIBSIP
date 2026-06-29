@@ -37,8 +37,8 @@ function showAlert(message, type = 'danger') {
 
 // Routing & View Switcher (Login, Register, Dashboard)
 function navigateTo(viewName) {
-    // Hide all cards
-    document.querySelectorAll('.card').forEach(card => card.classList.remove('active'));
+    // Hide all active views
+    document.querySelectorAll('.active').forEach(el => el.classList.remove('active'));
     
     // Check authentication guards
     if (viewName === 'dashboard') {
